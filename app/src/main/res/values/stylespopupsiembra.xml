@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--POPPUT  SIEMBRA-->
+    <style name="DialogPopupTheme" parent="Theme.MaterialComponents.Light.Dialog">
+
+        <!-- Fondo transparente -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <!-- Sin barra de titulo -->
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- Sin barra superior -->
+        <item name="android:windowActionBar">false</item>
+
+        <!-- Fondo oscuro detrás -->
+        <item name="android:backgroundDimEnabled">true</item>
+
+    </style>
+<!--TOOLBAR RESULTADO ANALISIS-->
+    <style name="TextAppearance.Toolbar.Title"
+        parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+</resources>

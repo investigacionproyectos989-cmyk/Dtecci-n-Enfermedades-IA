@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/page_inicio">
+
+    <!-- Fragment Inicio -->
+    <fragment
+        android:id="@+id/page_inicio"
+        android:name="com.innonorbelis.tomatoia.ui.view.InicioFragment"
+        tools:layout="@layout/fragment_inicio">
+
+
+    </fragment>
+
+    <!-- Fragment Historial -->
+    <fragment
+        android:id="@+id/page_historial"
+        android:name="com.innonorbelis.tomatoia.ui.view.HistorialFragment"
+        tools:layout="@layout/fragment_historial"/>
+
+    <!-- Fragment Consulta IA -->
+    <fragment
+        android:id="@+id/page_consultaIA"
+        android:name="com.innonorbelis.tomatoia.ui.view.ConsultarIAFragment"
+        tools:layout="@layout/fragment_consultar_i_a"/>
+
+</navigation>

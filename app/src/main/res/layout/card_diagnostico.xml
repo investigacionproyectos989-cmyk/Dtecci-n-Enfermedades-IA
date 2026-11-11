@@ -1,0 +1,155 @@
+<!--
+  CARD 1 — Diagnóstico
+  Equivalente React:  Card con diagRow (imagen + info lateral)
+  ┌─────────────────────────────────────┐
+  │  [Img 140x105]  🔧 Diagnóstico IA  │
+  │                 Tizón temprano      │
+  │                 (Alternaria solani) │
+  │                 Confianza   92%     │
+  │                 ████████░░          │
+  │                 📅 24 may 2025      │
+  └─────────────────────────────────────┘
+ -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="14dp"
+    android:layout_marginEnd="14dp"
+    android:layout_marginBottom="0dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="top">
+        <!--  Imagen de la hoja / cultivo  -->
+        <!--  Equivalente: diagImg  width:140  height:105  borderRadius:12  -->
+        <ImageView
+            android:id="@+id/imgDiagnostico"
+            android:layout_width="140dp"
+            android:layout_height="105dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_leaf"
+            android:background="@drawable/bg_image_rounded_hoja"
+            android:clipToOutline="true"
+            android:contentDescription="Imagen del cultivo analizado"/>
+        <!--  Columna de información  -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="14dp"
+            android:orientation="vertical">
+            <!--  Badge "Diagnóstico IA"  -->
+            <!--  Equivalente: diagBadge  bg:#E8F5E9  color:#2E7D32  borderRadius:20  -->
+            <TextView
+                android:id="@+id/tvBadgeIA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚙ Diagnóstico IA"
+                android:textColor="@color/green_medium"
+                android:textSize="11.5sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_badge_green_diagnostico_ia"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginBottom="6dp"/>
+            <!--  Nombre de la enfermedad  -->
+            <TextView
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/tvNombreEnfermedad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tizón temprano"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:lineSpacingMultiplier="1.2"
+                tools:ignore="HardcodedText"/>
+            <!--  Nombre científico  -->
+            <TextView
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/tvNombreCientifico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(Alternaria solani)"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:textStyle="italic"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="8dp"
+                tools:ignore="HardcodedText"/>
+            <!--  Fila: "Confianza de la IA" + "92%"  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="5dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Confianza de la IA"
+                    android:textColor="@color/text_hint"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:id="@+id/tvConfianza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="92%"
+                    android:textColor="@color/green_medium"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <!--  Barra de progreso de confianza  -->
+            <!--  Equivalente: confBar + confFill  -->
+            <ProgressBar
+                android:id="@+id/progressConfianza"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:progress="92"
+                android:max="100"
+                android:progressDrawable="@drawable/bg_progress_confianza"
+                android:layout_marginBottom="10dp"/>
+            <!--  Fila: icono calendario + "Fecha del análisis"  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="2dp">
+                <ImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_calendars"
+                    app:tint="@color/green_medium"
+                    android:contentDescription="@null"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="Fecha del análisis"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+            <!--  Valor de la fecha  -->
+            <TextView
+                android:id="@+id/tvFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="24 may. 2025 • 10:45 a.m."
+                android:textColor="@color/text_hint"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

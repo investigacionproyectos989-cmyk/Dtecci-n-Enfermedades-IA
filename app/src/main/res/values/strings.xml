@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">TomatoIA</string>
+
+    <string name="hello_blank_fragment">Hola consultar IA</string>
+    <string name="premium_bot_icon">Hola consultar IA</string>
+    <string name="mensajeTitulo">Escanee su cultivo</string>
+    <string name="mensajecuerpotexto">Detecte posibles enfermedades en las hojas de tomate</string>
+
+
+    <string name="app_desc">Detección y clasificación temprana de enfermedades foliares en tomate</string>
+    <string name="btn_iniciar">Iniciar Análisis</string>
+    <string name="btn_historial">Historial</string>
+    <string name="btn_enviar_ia">Enviar a IA</string>
+    <string name="btn_otra_foto">Tomar otra foto</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_nuevo">Nuevo Análisis</string>
+    <string name="estado_enferma">ENFERMA</string>
+    <string name="estado_sana">SANA</string>
+    <string name="recomendacion_titulo">Recomendación:</string>
+
+
+    <!-- Textos principales -->
+    <string name="analizando_hoja">Imagen analizada</string>
+    <string name="preparando">Preparando...</string>
+    <string name="procesando_ia">Procesando con inteligencia artificial...</string>
+
+    <!-- Estados adicionales (puedes usarlos en tu flujo IA) -->
+    <string name="preparando_imagen">Preparando imagen...</string>
+    <string name="procesando_modelo">Procesando...</string>
+    <string name="analizando_patrones">Analizando patrones...</string>
+    <string name="finalizando">Finalizando...</string>
+    <string name="error_imagen">Error: imagen no válida</string>
+    <string name="resultado_no_concluyente">No concluyente</string>
+    <string name="mensajesplash">Diseñado para hoja de cultivos de tomate!
+</string>
+
+
+
+</resources>

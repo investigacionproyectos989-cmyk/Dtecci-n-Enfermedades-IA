@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutProcesamiento"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundWhite"
+    tools:context=".ui.activity.ProcesamientoActivity">
+
+    <!-- CONTENEDOR IMAGEN + SCANNER -->
+    <FrameLayout
+        android:id="@+id/containerImagen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_xlarge">
+
+        <ImageView
+            android:id="@+id/imgPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_rounded_image_procesamiento" />
+
+
+    </FrameLayout>
+
+    <!-- Animación Lottie -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieLoading"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_fileName="loading_leaf_pro.json"
+        app:layout_constraintTop_toBottomOf="@id/containerImagen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_medium"/>
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/analizando_hoja"
+        android:textSize="@dimen/text_large"
+        android:textStyle="bold"
+        android:textColor="@color/textPrimary"
+        app:layout_constraintTop_toBottomOf="@id/lottieLoading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_medium"/>
+
+    <!-- Estado -->
+    <TextView
+        android:id="@+id/tvEstadoprocess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/preparando"
+        android:textSize="@dimen/text_medium"
+        android:textColor="@color/infoBlue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_small"
+        tools:text="Preparando imagen..."/>
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/tvDescriprocess"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="H"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/nl_green"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/padding_large"
+        app:layout_constraintTop_toBottomOf="@id/tvEstadoprocess"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_small"/>
+
+    <!-- Mensaje de rechazo: la imagen no corresponde a una hoja enferma de tomate -->
+    <LinearLayout
+        android:id="@+id/layoutRechazo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:background="@drawable/bg_rechazo_procesamiento"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvDescriprocess"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/ic_warning"
+            android:contentDescription="Aviso"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/tvMensajeRechazo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            android:textColor="#7A0012"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btnNuevaFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Tomar otra fotografía"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <!-- Confianza -->
+    <TextView
+        android:id="@+id/tvConfianza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/textSecondary"
+        app:layout_constraintTop_toBottomOf="@id/layoutRechazo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_small"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

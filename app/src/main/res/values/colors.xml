@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#101010</color>
+    <color name="write">#F9FBF9</color>
+
+    <color name="Marronclaro">#B08968</color>
+    <color name="Arenasuave">#EDEDE9</color>
+
+    <color name="Verdemusgo">#718355</color>
+    <color name="Amarillotrigo">#E5C687</color>
+
+    <color name="Verdebosque">#588157</color>
+    <color name="Verdeoscuro">#5B7553</color>
+    <color name="gris">#A0A0A0</color>
+    <color name="verde">#00FF00</color>
+    <color name="azul0">#D5F5E2</color>
+    <color name="azul1">#E9F5EE</color>
+
+
+
+    <color name="risk_high">#D32F2F</color>
+    <color name="risk_moderate">#F9A825</color>
+    <color name="risk_low">#388E3C</color>
+
+        <color name="primary_green">#388E3C</color>
+        <color name="background_light">#F8F8F8</color>
+        <color name="green_main">#2E7D32</color>
+        <color name="green_mid">#388E3C</color>
+        <color name="green_light">#A5D6A7</color>
+        <color name="green_pale">#E8F5E9</color>
+        <color name="red_main">#C62828</color>
+        <color name="red_light">#FFEBEE</color>
+        <color name="gray_bg">#F4F6F3</color>
+        <color name="gray_border">#E0E5DF</color>
+        <color name="gray_text">#9E9E9E</color>
+        <color name="text_dark">#1A2E1A</color>
+        <color name="text_mid">#4A5E4A</color>
+
+
+        <!-- Colores principales -->
+        <color name="backgroundWhite">#FFFFFF</color>
+        <color name="textPrimary">#111111</color>
+        <color name="textSecondary">#777777</color>
+        <color name="green_mainPrincipal">#4CAF50</color> <!-- Verde principal -->
+
+        <!-- Colores adicionales (opcional) -->
+        <color name="errorRed">#D32F2F</color>
+        <color name="warningOrange">#FFA000</color>
+        <color name="infoBlue">#1976D2</color>
+
+
+
+    <!--  ── Verdes principales ──  -->
+    <!--  #1B5E35  →  Toolbar, Bottom CTA, texto negrita PC/PR  -->
+    <color name="green_dark">#1B5E35</color>
+    <!--  #2E7D32  →  Iconos, badge IA, confianza %, progress fill  -->
+    <color name="green_medium">#2E7D32</color>
+    <!--  #43A047  →  Inicio del gradiente de la barra de progreso  -->
+    <color name="green_light_fill">#43A047</color>
+    <!--  #E8F5E9  →  Fondo del badge IA, fondo del icono libro, frasco  -->
+    <color name="green_bg_light">#E8F5E9</color>
+    <!--  #C8E6C9  →  Borde inferior del encabezado de tabla  -->
+    <color name="table_header_border">#C8E6C9</color>
+    <!--  #F1F8F2  →  Fondo del thead de la tabla  -->
+    <color name="table_header_bg">#F1F8F2</color>
+    <!--  #FAFFFE  →  Fila alterna de la tabla  -->
+    <color name="table_row_alt">#FAFFFE</color>
+    <!--  ── Ámbar / Advertencia ──  -->
+    <!--  #FFF8E1  →  Fondo del icono de alerta  -->
+    <color name="amber_bg_light">#FFF8E1</color>
+    <!--  #F57F17  →  Color del icono de alerta  -->
+    <color name="amber_dark">#F57F17</color>
+    <!--  ── Neutros / Texto ──  -->
+    <!--  #1a1a1a  →  Texto primario (títulos)  -->
+    <color name="text_primary">#1A1A1A</color>
+    <!--  #333333  →  Cuerpo de texto, celdas tabla  -->
+    <color name="text_body">#333333</color>
+    <!--  #555555  →  Texto hint "Confianza de la IA"  -->
+    <color name="text_hint">#555555</color>
+    <!--  #777777  →  Nombre científico, fecha label  -->
+    <color name="text_secondary">#777777</color>
+    <!--  #888888  →  Subtítulo acordeón, footnote  -->
+    <color name="text_tertiary">#888888</color>
+    <!--  ── Fondos ──  -->
+    <!--  #F2F5F0  →  Fondo de pantalla  -->
+    <color name="bg_screen">#F2F5F0</color>
+    <!--  #FFFFFF  →  Cards  -->
+    <color name="white">#FFFFFF</color>
+    <!--  #E0E0E0  →  Track de la barra de progreso  -->
+    <color name="progress_track">#E0E0E0</color>
+    <!--  #F5F5F5  →  Chip toggle inactivo  -->
+    <color name="chip_inactive_bg">#F5F5F5</color>
+    <!--  rgba(255,255,255,.15) →  Botón toolbar semitransparente  -->
+    <color name="white_15">#26FFFFFF</color>
+
+    <!-- Paleta NeuralLeaf -->
+    <color name="nl_bg">#F3F6EC</color>        <!-- fondo de la pantalla -->
+    <color name="nl_card">#FFFFFF</color>      <!-- tarjeta blanca -->
+    <color name="nl_ink">#1E2B22</color>       <!-- texto principal -->
+    <color name="nl_soft">#5E6F62</color>      <!-- texto secundario -->
+    <color name="nl_green">#2E8B3E</color>     <!-- verde hoja: botón y títulos -->
+    <color name="nl_deep">#1B4D2E</color>      <!-- verde oscuro: tarjeta del clima -->
+    <color name="nl_lime">#DDEFC8</color>      <!-- verde claro: chips e íconos -->
+    <color name="nl_sun">#F4B73F</color>       <!-- amarillo sol -->
+    <color name="nl_soil">#7A5236</color>      <!-- café tierra -->
+    <color name="nl_line">#E2E9D8</color>
+    <color name="nl_risk_dot">#7ED957</color>  <!-- punto verde de riesgo bajo -->
+    <color name="nl_on_lime">#1B4D2E</color>
+    <!-- Paleta UI procesmientoActivity -->
+    <color name="amarillo_suave">#F9FAC2</color>
+
+    <color name="green_toolbar">#285943</color>
+    <color name="amarillo">#F8DBBF</color>
+    F8DBBF
+
+
+</resources>

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F9F9F9"
+    tools:context=".ui.activity.RecordatorioActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+        <!-- Título -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Configuración de recordatorios"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            />
+
+        <ImageView
+            android:id="@+id/ivclose"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="-23dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_hojatomate"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+        <!-- CardView: Selección de planta -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tipo tomate"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/plant_selection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar planta"
+                        android:textSize="16sp"
+                        android:textColor="#A0A0A0"
+                        android:layout_alignParentEnd="true"
+                        android:drawableEnd="@drawable/ic_hojatomate"
+                        android:drawablePadding="8dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </RelativeLayout>
+
+                <!-- Lista de plantas -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_plants"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:overScrollMode="ifContentScrolls"
+                    android:visibility="gone"
+                    android:nestedScrollingEnabled="true"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView: Tipo de Recordatorio -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recuérdame sobre"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/reminder_type_selection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar opción"
+                        android:textSize="16sp"
+                        android:textColor="#A0A0A0"
+                        android:layout_alignParentEnd="true"
+                        android:drawableEnd="@drawable/ic_hojatomate"
+                        android:drawablePadding="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
+                </RelativeLayout>
+
+                <!-- Lista de tipos de recordatorio -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_reminders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:overScrollMode="ifContentScrolls"
+                    android:nestedScrollingEnabled="false"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView: Hora -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora para el control"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/reminder_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar opción"
+                        android:textSize="16sp"
+                        android:textColor="#A0A0A0"
+                        android:layout_alignParentEnd="true"
+                        android:drawableEnd="@drawable/ic_old"
+                        android:drawablePadding="8dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </RelativeLayout>
+
+                <!-- Contenedor principal de los pickers -->
+                <!-- Contenedor principal -->
+                <LinearLayout
+                    android:id="@+id/hour_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+
+                    <!-- Picker de hora -->
+                    <NumberPicker
+                        android:id="@+id/numberPickerHour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp" />
+
+                    <!-- Dos puntos -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="20sp"
+                        android:textColor="#2E7D32"
+                        android:layout_marginHorizontal="4dp"
+                        android:gravity="center" />
+
+                    <!-- Picker de minutos -->
+                    <NumberPicker
+                        android:id="@+id/numberPickerMinute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <!-- AM / PM -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/bg_ampm_selector"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/textAm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AM"
+                            android:textColor="#2E7D32"
+                            android:padding="8dp"
+                            android:background="@drawable/bg_ampm_unselected" />
+
+                        <TextView
+                            android:id="@+id/textPm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PM"
+                            android:textColor="#2E7D32"
+                            android:padding="8dp"
+                            android:background="@drawable/bg_ampm_unselected"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- CardView: Frecuencia control dias -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Frecuencia"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/repeat_selection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar frecuencia"
+                        android:textSize="16sp"
+                        android:textColor="#A0A0A0"
+                        android:layout_alignParentEnd="true"
+                        android:drawableEnd="@drawable/ic_hojatomate"
+                        android:drawablePadding="8dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </RelativeLayout>
+                <!-- Lista de frecuencias diaria del control -->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_frecuencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scrollbars="vertical"
+                    android:nestedScrollingEnabled="true" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- CardView: Anterior control-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Control anterior"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/previous_selection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar "
+                        android:textSize="16sp"
+                        android:textColor="#A0A0A0"
+                        android:layout_alignParentEnd="true"
+                        android:drawableEnd="@drawable/ic_hojatomate"
+                        android:drawablePadding="8dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </RelativeLayout>
+                <!-- Lista de control anterior-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_previous"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:overScrollMode="ifContentScrolls"
+                    android:nestedScrollingEnabled="true"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView: Fecha -->
+        <!-- CardView: Fecha calendario-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repetir el control"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:id="@+id/date_selection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar fecha"
+                        android:textSize="16sp"
+                        android:textColor="#A0A0A0"
+                        android:layout_alignParentEnd="true"
+                        android:drawableEnd="@drawable/ic_calendar"
+                        android:drawablePadding="8dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btn_save_reminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4CAF50"
+            android:text="Guardar recordatorio"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>

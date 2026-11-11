@@ -1,0 +1,57 @@
+<!--
+  CARD 2 — Descripción
+  Equivalente React: secIcon(#E8F5E9, #2E7D32) + IconBook + párrafo
+ -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="14dp"
+    android:layout_marginEnd="14dp"
+    android:layout_marginTop="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <!--  Fila encabezado: icono + título  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+            <!--  Icono cuadrado redondeado verde claro  -->
+            <!--  Equivalente: secIcon("#E8F5E9","#2E7D32")  -->
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_virus"
+                android:background="@drawable/bg_icon_green_light_tratamient"
+                android:padding="8dp"
+                app:tint="@color/green_medium"
+                android:contentDescription="@null"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Descripción"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <!--  Párrafo de descripción  -->
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El tizón temprano es una enfermedad fúngica que afecta principalmente las hojas de tomate. Se caracteriza por manchas oscuras con anillos concéntricos y amarillamiento alrededor. En casos severos, provoca la caída prematura de hojas y disminución del rendimiento."
+            android:textColor="@color/text_body"
+            android:textSize="13.5sp"
+            android:lineSpacingMultiplier="1.65"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

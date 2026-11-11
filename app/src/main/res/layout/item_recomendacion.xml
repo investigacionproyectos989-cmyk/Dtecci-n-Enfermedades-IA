@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="top"
+    android:layout_marginBottom="8dp">
+
+    <ImageView
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_leaf"
+        app:tint="@color/green_medium"
+        android:contentDescription="@null"/>
+
+    <TextView
+        android:id="@+id/tvRecomendacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/text_body"
+        android:textSize="13.5sp"
+        android:lineSpacingMultiplier="1.5"/>
+
+</LinearLayout>

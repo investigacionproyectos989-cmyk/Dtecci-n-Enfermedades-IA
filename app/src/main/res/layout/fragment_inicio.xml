@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmetinico"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg"
+    tools:context=".ui.view.InicioFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <!-- Encabezado -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/nl_bg"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_robotia"
+                    app:tint="@android:color/darker_gray"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="NeuralLeaf"
+                    android:textColor="@color/nl_ink"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_more_options"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_sun_glow"
+                    android:contentDescription="Mi perfil"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_userajuste"
+                    app:tint="@color/nl_on_lime" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Contenido desplazable -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/containerprincipal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="18dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    android:id="@+id/tv_greeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="¡Bienvenido, agricultor!"
+                    android:textColor="@color/Verdebosque"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_greeting_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text=""
+                    android:textColor="@color/nl_soft"
+                    android:textSize="14sp" />
+
+                <!-- Tarjeta del clima -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/nl_deep"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="0dp">
+
+                    <View
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="-40dp"
+                        android:layout_marginEnd="-30dp"
+                        android:background="@drawable/bg_sun_glow" />
+
+                    <ProgressBar
+                        android:id="@+id/loadingWeather"
+                        style="?android:attr/progressBarStyleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+
+                        <TextView
+                            android:id="@+id/tv_weather_temp"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:ellipsize="none"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="Mayormente despejado"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_body_smallarge"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@id/iv_weather_icon"
+                            app:layout_constraintHorizontal_bias="0.829"
+                            app:layout_constraintStart_toStartOf="@id/iv_weather_icon"
+                            app:layout_constraintTop_toBottomOf="@id/iv_weather_icon" />
+
+                        <TextView
+                            android:id="@+id/tv_current_temp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="20c"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_title_large"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text=""
+                            android:textColor="#D9EACB"
+                            android:textSize="@dimen/text_body_large"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_current_temp" />
+
+                        <TextView
+                            android:id="@+id/tv_risk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:background="@drawable/bg_risk_badge"
+                            android:drawableStart="@drawable/dot_risk"
+                            android:drawablePadding="6dp"
+                            android:paddingStart="12dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="12dp"
+                            android:paddingBottom="6dp"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_body_medium"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_location" />
+
+                        <ImageView
+                            android:id="@+id/iv_weather_icon"
+                            android:layout_width="72dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_cloudyweather"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- Tarjeta de diagnóstico -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_diagnostico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <!-- Encabezado: imagen y textos -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Imagen redondeada -->
+                            <FrameLayout
+                                android:layout_width="120dp"
+                                android:layout_height="120dp">
+
+                                <!-- Imagen de fondo: queda detrás -->
+                                <ImageView
+                                    android:id="@+id/iv_hoja_neurona"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/hojaneurona"
+                                    android:scaleType="fitCenter" />
+
+                                <!-- Capa verde: queda encima -->
+                                <FrameLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
+                                    android:background="@drawable/bg_circulo_verde"
+                                    android:alpha="0.5" />
+
+                            </FrameLayout>
+
+                            <!-- Título y descripción a la derecha -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_diagnostic_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Escanee su cultivo"
+                                    android:textColor="@color/nl_ink"
+                                    android:textSize="@dimen/text_medium_large"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:lineSpacingMultiplier="1.15"
+                                    android:text="Detecte posibles enfermedades en las hojas del tomate."
+                                    android:textColor="@color/nl_soft"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- Botón para analizar una hoja -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_camera"
+                            android:layout_width="match_parent"
+                            android:layout_height="76dp"
+                            android:backgroundTint="@color/nl_green"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Analizar una hoja"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_title_large"
+                            app:cornerRadius="24dp"
+                            app:iconGravity="textStart"
+                            app:icon="@drawable/ic_enfoquecamara"
+                            app:iconPadding="12dp"
+                            app:iconTint="@android:color/white"
+                            app:strokeWidth="0dp" />
+
+                        <!-- Título de los consejos -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="Consejos para una buena fotografía"
+                            android:textColor="@color/nl_ink"
+                            android:textSize="20sp" />
+
+                        <!-- Tarjetas de consejos -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <!-- Consejo 1: buena luz -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="112dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#F0F4E7"
+                                app:cardCornerRadius="24dp"
+                                app:cardElevation="0dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="6dp">
+
+                                    <ImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:src="@drawable/ic_energia"
+                                        android:text="☼"
+                                        android:textColor="#398750"
+                                        android:textSize="36sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Buena luz"
+                                        android:textColor="@color/nl_ink"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <!-- Consejo 2: enfoque -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="112dp"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="3dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#F0F4E7"
+                                app:cardCornerRadius="24dp"
+                                app:cardElevation="0dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="6dp">
+
+                                <ImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:src="@drawable/ic_enfoque"
+                                        app:tint="#398750"
+                                        android:scaleType="fitCenter"
+                                        tools:ignore="ContentDescription" />
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Buen enfoque"
+                                        android:textColor="@color/nl_ink"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <!-- Consejo 3: una hoja -->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="112dp"
+                                android:layout_marginStart="6dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#F0F4E7"
+                                app:cardCornerRadius="24dp"
+                                app:cardElevation="0dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="6dp">
+
+                                    <ImageView
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:text="♧"
+                                        app:tint="#398750"
+                                        android:src="@drawable/ic_hojatoma"
+                                        android:textColor="#398750"
+                                        android:textSize="36sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="Una hoja"
+                                        android:textColor="@color/nl_ink"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</FrameLayout>

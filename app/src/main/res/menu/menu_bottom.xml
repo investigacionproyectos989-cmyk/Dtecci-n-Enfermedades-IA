@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+    android:id="@+id/page_inicio"
+    android:icon="@drawable/ic_plantagriculture"
+    android:title="Inicio"/>
+
+    <item
+        android:id="@+id/page_consultaIA"
+        android:icon="@drawable/ic_camera"
+        android:title="Diagnosticar"/>
+
+    <item
+        android:id="@+id/page_historial"
+        android:icon="@drawable/ic_robotomato"
+        android:title="Historial"/>
+</menu>

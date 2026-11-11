@@ -1,0 +1,112 @@
+[
+  {
+    "nombre_modelo": "Bacterial_spot",
+    "nombre_mostrar": "Mancha bacteriana",
+
+    "descripcion": "Enfermedad bacteriana que causa pequeñas manchas oscuras en hojas, tallos y frutos.",
+
+    "tratamiento": "Aplicar productos a base de cobre y eliminar partes infectadas.",
+
+    "prevencion": "Evitar humedad excesiva y usar semillas certificadas."
+  },
+  {
+    "nombre_modelo": "Early_blight",
+    "nombre_mostrar": "Tizón temprano",
+
+    "descripcion": "Produce manchas marrones circulares en hojas maduras con anillos concéntricos.",
+
+    "tratamiento": "Aplicar fungicidas y eliminar hojas afectadas.",
+
+    "prevencion": "Rotación de cultivos y control de humedad."
+  },
+  {
+    "nombre_modelo": "healthy",
+    "nombre_mostrar": "Hoja sana",
+
+    "descripcion": "La planta no presenta signos visibles de enfermedad.",
+
+    "tratamiento": "No requiere tratamiento.",
+
+    "prevencion": "Mantener buenas prácticas agrícolas."
+  },
+  {
+    "nombre_modelo": "Late_blight",
+    "nombre_mostrar": "Tizón tardío",
+
+    "descripcion": "Enfermedad fúngica que produce manchas oscuras y húmedas en hojas y frutos.",
+
+    "tratamiento": "Aplicar fungicidas preventivos y retirar hojas infectadas.",
+
+    "prevencion": "Evitar exceso de humedad y mejorar ventilación."
+  },
+  {
+    "nombre_modelo": "Leaf_Mold",
+    "nombre_mostrar": "Moho de la hoja",
+
+    "descripcion": "Provoca manchas amarillas en el haz y moho gris en el envés de la hoja.",
+
+    "tratamiento": "Aplicar fungicidas y reducir humedad en el cultivo.",
+
+    "prevencion": "Mantener buena ventilación y evitar riego excesivo."
+  },
+  {
+    "nombre_modelo": "powdery_mildew",
+    "nombre_mostrar": "Oídio",
+
+    "descripcion": "Aparece como un polvo blanco en la superficie de las hojas.",
+
+    "tratamiento": "Aplicar fungicidas específicos contra oídio.",
+
+    "prevencion": "Evitar cambios bruscos de temperatura y humedad."
+  },
+  {
+    "nombre_modelo": "Septoria_leaf_spot",
+    "nombre_mostrar": "Mancha de septoria",
+
+    "descripcion": "Produce pequeñas manchas circulares con centro gris y bordes oscuros.",
+
+    "tratamiento": "Eliminar hojas infectadas y aplicar fungicidas.",
+
+    "prevencion": "Evitar mojar las hojas y mantener distancia entre plantas."
+  },
+  {
+    "nombre_modelo": "Spider_mites_Two-spotted_spider_mite",
+    "nombre_mostrar": "Ácaros (araña roja)",
+
+    "descripcion": "Plaga que causa puntos amarillos y telarañas en las hojas.",
+
+    "tratamiento": "Aplicar acaricidas o control biológico.",
+
+    "prevencion": "Mantener humedad adecuada y monitorear constantemente."
+  },
+  {
+    "nombre_modelo": "Target_Spot",
+    "nombre_mostrar": "Mancha diana",
+
+    "descripcion": "Produce manchas con forma de anillos concéntricos similares a un blanco de tiro.",
+
+    "tratamiento": "Aplicar fungicidas y eliminar hojas afectadas.",
+
+    "prevencion": "Evitar alta humedad y mejorar circulación de aire."
+  },
+  {
+    "nombre_modelo": "Tomato_mosaic_virus",
+    "nombre_mostrar": "Virus del mosaico del tomate",
+
+    "descripcion": "Causa patrones de mosaico en hojas, deformaciones y reducción del crecimiento.",
+
+    "tratamiento": "No tiene cura, eliminar plantas infectadas.",
+
+    "prevencion": "Usar semillas certificadas y desinfectar herramientas."
+  },
+  {
+    "nombre_modelo": "Tomato_Yellow_Leaf_Curl_Virus",
+    "nombre_mostrar": "Virus del rizado amarillo del tomate",
+
+    "descripcion": "Provoca hojas amarillas, enrolladas y crecimiento reducido.",
+
+    "tratamiento": "No tiene cura, eliminar plantas infectadas.",
+
+    "prevencion": "Controlar la mosca blanca y usar variedades resistentes."
+  }
+]

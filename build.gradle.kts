@@ -1,0 +1,14 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+
+    //Dagger hilt
+    alias(libs.plugins.google.dagger.hilt) apply false
+
+    // Parcelize
+    alias(libs.plugins.navigation.safe.args) apply false
+    alias(libs.plugins.kotlin.parcelize) apply false
+
+
+}
